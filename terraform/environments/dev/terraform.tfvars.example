@@ -1,0 +1,45 @@
+# Environment Configuration
+environment_prefix = "dev"
+workload          = "webapp"
+location          = "eastus"
+data_location     = ""  # Defaults to location if not specified
+
+# Tags
+tags = {
+  Project     = "Azure App Sample"
+  Owner       = "Platform Team"
+  CostCenter  = "Engineering"
+}
+
+# ============================================================
+# Hub-and-Spoke Network Configuration
+# ============================================================
+
+# Network Configuration
+vnet_address_space            = "10.0.0.0/16"
+app_subnet_address_prefix     = "10.2.1.0/24"
+pe_subnet_address_prefix      = "10.2.2.0/24"
+
+# ============================================================
+# App Service Configuration
+# ============================================================
+
+app_service_sku = "P1v3"  # Options: B1, B2, B3, S1, S2, S3, P1v2, P2v2, P3v2, P1v3, P2v3, P3v3
+
+# ============================================================
+# Azure Front Door Configuration
+# ============================================================
+
+frontdoor_sku_name          = "Premium_AzureFrontDoor"  # Options: Standard_AzureFrontDoor, Premium_AzureFrontDoor
+frontdoor_health_probe_path = "/"                        # Health probe path for Front Door
+waf_mode                    = "Prevention"               # Options: Prevention, Detection
+
+# ============================================================
+# SQL Server Configuration
+# ============================================================
+
+# SQL Database Configuration
+sql_admin_username       = "sqladmin"
+sql_admin_password       = "<insert-password-here>"  # IMPORTANT: Change this in production!
+sql_database_sku         = "Basic"  # Options: Basic, S0, S1, S2, S3, P1, P2, P4, P6, P11, P15
+sql_database_max_size_gb = 2
